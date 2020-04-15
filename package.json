@@ -1,0 +1,31 @@
+{
+  "name": "animation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jessy0715/animation_test.git"
+  },
+  "author": "jessy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jessy0715/animation_test/issues"
+  },
+  "homepage": "https://github.com/Jessy0715/animation_test#readme",
+  "dependencies": {
+    "autoprefixer": "^9.7.6",
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch": "^5.0.1"
+  },
+  "browserslist": [
+    "last 3 version",
+    "> 5%"
+  ]
+}
