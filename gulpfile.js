@@ -1,8 +1,7 @@
 var gulp = require ('gulp');
 var sass = require('gulp-sass');
-var watch = require('gulp-watch');
 var plumber = require('gulp-plumber');
-var postcss = require('postcss');
+var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 
 
@@ -13,8 +12,7 @@ gulp.task('copyhtml', function(){
 
 gulp.task('sass', function () {
 
-    return gulp.src('./source/scss/**/*.scss')
-    .pipe(watch('./source/scss/**/*.scss'))
+    return gulp.src(['./source/scss/**/*.scss'])
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([ autoprefixer() ]))
@@ -25,10 +23,8 @@ gulp.task('default',
     gulp.series(
         gulp.parallel('sass'),
         
-        function (done){
-            gulp.watch(['./source/scss/**/*.sass', './source/scss/**/*.scss'], ['sass']);
-    
-            done();
+        function (){
+            return gulp.watch(['./source/scss/**/*.sass', './source/scss/**/*.scss'], gulp.series('sass'));
         }
     )
 )
